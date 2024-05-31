@@ -140,3 +140,33 @@ function cargarDatos() {
     }
 }
 
+function generarPDFLibros() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.text('Listado de Libros', 10, 10);
+    let y = 20;
+
+    libros.forEach((libro, index) => {
+        doc.text(`${index + 1}. ${libro.titulo} - Cantidad: ${libro.cantidad} - Rubro: ${libro.rubro}`, 10, y);
+        y += 10;
+    });
+
+    doc.save('listado_libros.pdf');
+}
+
+function generarPDFPrestamos() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.text('Listado de Préstamos', 10, 10);
+    let y = 20;
+
+    prestamos.forEach((prestamo, index) => {
+        doc.text(`${index + 1}. Título: ${prestamo.titulo} - Prestado a: ${prestamo.usuario}`, 10, y);
+        y += 10;
+    });
+
+    doc.save('listado_prestamos.pdf');
+}
+

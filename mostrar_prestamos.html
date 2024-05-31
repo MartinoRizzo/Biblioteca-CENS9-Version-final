@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mostrar Préstamos</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+
 </head>
 <body>
     <h1>Mostrar Préstamos</h1>
     <div class="form-section">
         <button onclick="mostrarPrestamos()">Mostrar Préstamos</button>
+        <button onclick="generarPDFPrestamos()">Generar PDF de Préstamos</button>
         <div id="resultado"></div>
         <a href="index.html"><button>Volver al Inicio</button></a>
     </div>
